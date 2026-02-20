@@ -23,9 +23,9 @@ int main(void)
 {
     struct car myCar;
 
-    myCar.fuel_level = 10.0;
-    myCar.max_fuel_level = 50.0;
-    strcpy(myCar.model, "Toyota Corolla");
+    myCar.fuel_level = 25.0;
+    myCar.max_fuel_level = 70.0;
+    strcpy(myCar.model, "Mercedes-Benz S-Coupe");
 
     printf("Before refueling:\n");
     printf("Model: %s\n", myCar.model);
