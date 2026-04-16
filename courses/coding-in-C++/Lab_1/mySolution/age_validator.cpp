@@ -29,11 +29,49 @@ int main()
     int age = 0;
 
     std::cout << "Please enter your age: ";
-    
-    if (!(std::cin >> age))
+    while(true)
+    {
+        // if not a number
+        if (!(std::cin >> age))
+            {
+                std::cout << "You did not enter a valid number. Please try again." << '\n';
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
+        // no negative numbers allowed
+        else if (age < 0)
         {
-            std::cout << "You did not enter a valid number. Please try again." << '\n';
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "You entered a negative number. Please try again." << '\n';
         }
+        // no numbers larger than MAX_AGE allowed
+        else if (age > MAX_AGE)
+        {
+            std::cout << "Your number is too large. Please try again." << '\n';
+        }
+        // valid input ends infinite loop
+        else
+        {
+            break;
+        }
+        std::cout << "Please enter your age: ";
+    }
+
+    std::cout << "Your are" << age << "years old." << std::endl;
+
+    const std::uint8_t validated_age = static_cast<std::uint8_t>(age);
+
+    if (validation::isSenior(validated_age))
+    {
+        std::cout << "That means you are a senior citizen." << std::endl;
+    }
+    else if (validation::isAdult(validated_age))
+    {
+        std::cout << "That means you are an adult." << std::endl;
+    }
+    else
+    {
+        std::cout << "That means you are still a kid or teenager." << std::endl;
+    }
+    
+    return 0;
 }
