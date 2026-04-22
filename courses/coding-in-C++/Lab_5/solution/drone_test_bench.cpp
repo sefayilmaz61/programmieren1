@@ -116,7 +116,7 @@ int main()
     bool majority = (avg > 0.5);
 
     std::cout << "Motor was active for most of the test run: "
-              << majority << '\n';
+              << std::boolalpha << majority << '\n';
 
     return 0;
 }
