@@ -89,4 +89,16 @@ void composeTags(std::string label1, T value1, std::string label2, U value2)
     std::cout << label1 << ": " << value1 << " | " << label2 << ": " << value2 << '\n';
 }
 
+/* Questions of Task 5:
+/* 1. Why is the size no longer needed as a parameter?
+/* Answer: Because the size is handed over via non-type template parameter.
+/* The compiler knows the size at compile time, so it does not need to be passed at runtime.
+/* 2. What advantage does this have compared to the previous version?
+/* Answer: The function becomes safer and easier to use:
+/* - The size cannot be passed incorrectly anymore
+/* - There is no risk of mismatching array and size
+/* - The compiler enforces correctness at compile time
+/* - The function interface is simpler (fewer parameters)
+*/
+
 #endif
