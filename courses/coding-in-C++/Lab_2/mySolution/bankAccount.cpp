@@ -60,16 +60,16 @@ double BankAccount::getBalance()
 int main()
 {
     BankAccount myAccount;
-    myAccount.setOwner("Max Power");
+    myAccount.setOwner("Sefa Yilmaz");
 
-    // problem here: Since there is no constructor initializing balance, it starts with a random trash value
     myAccount.getAccountInfo();
 
     myAccount.deposit(1234.12);
 
     myAccount.getAccountInfo();
 
-    myAccount.withdraw(99999);
+    myAccount.withdraw(909);
+
     myAccount.getAccountInfo();
 
     myAccount.withdraw(20);
